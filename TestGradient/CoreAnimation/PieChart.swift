@@ -99,7 +99,9 @@ final class PieChart: UIView {
         gradient.locations = [0.0, gradientEndLocationFor(startAngle, endAngle)]
         gradient.startPoint = CGPoint(x: 0.5, y: 0.5)
         gradient.endPoint = gradientEndPointFor(angle: startAngle)
-        gradient.type = .conic
+        if #available(iOS 12.0, *) {
+            gradient.type = .conic
+        }
         gradient.mask = makeMaskLayer(startAngle: startAngle, endAngle: endAngle, radius: radius)
         return gradient
     }

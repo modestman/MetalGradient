@@ -11,7 +11,6 @@ import UIKit
 
 class ImageViewController: UIViewController {
     
-    @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var mtkImageView: MTKCIImageView!
     
     @IBOutlet private weak var startAngleSlider: UISlider! {

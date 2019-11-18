@@ -39,8 +39,9 @@ final class ConicGradient: UIView {
         gradient.colors = [UIColor.blue.cgColor, UIColor.yellow.cgColor]
         gradient.startPoint = CGPoint(x: 0.5, y: 0.5)
         gradient.endPoint = CGPoint(x: 1, y: 0.01)
-        
-        gradient.type = .conic
+        if #available(iOS 12.0, *) {
+            gradient.type = .conic
+        }
         gradient.mask = maskLayer
         
         self.layer.addSublayer(gradient)
